@@ -1,0 +1,43 @@
+public enum FriendshipStatus
+{
+    Pending,
+    Accepted,
+    Rejected,
+    Blocked
+}
+public enum MentorStatus
+{
+    Pending,
+    Accepted,
+    Rejected,
+    Blocked
+}
+public enum ProgressVisibility
+{
+    Public,
+    Private,
+    FriendsOnly
+}
+public enum TaskParticipantStatus
+{
+    Pending,
+    Accepted,
+    Rejected
+}
+public enum GroupRole
+{
+    Member,
+    Admin,
+    Owner
+}
+public enum GroupPrivacy
+{
+    Public,
+    Private
+}
+public enum LearningLevel
+{
+    Beginner,
+    Intermediate,
+    Advanced
+}
