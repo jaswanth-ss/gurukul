@@ -1,0 +1,6 @@
+@Gurukul.API_HostAddress = http://localhost:5227
+
+GET {{Gurukul.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

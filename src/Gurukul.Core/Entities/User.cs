@@ -1,26 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace src.Gurukul.Core.Entities
+namespace Gurukul.Core.Entities
 {
     public class User
     {
-        public GUID Id { get; set; }
-        public string Username { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public Guid Id { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string PasswordHash { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public UserProfiles Profile { get; set; }
-        public ICollection<Friendships> SentFriendships { get; set; }
-        public ICollection<Friendships> ReceivedFriendships { get; set; }
-        public ICollection<Mentor> Mentors { get; set; }
-        public ICollection<Mentor> MonitoredBy { get; set; }
-        public ICollection<GroupMembers> GroupMemberships { get; set; }
-        public ICollection<TaskParticipants> TaskParticipations { get; set; }
-        public ICollection<Tasks> CreatedTasks { get; set; }
+        public UserProfiles? Profile { get; set; }
+        public ICollection<Friendships> SentFriendships { get; set; } = new List<Friendships>();
+        public ICollection<Friendships> ReceivedFriendships { get; set; } = new List<Friendships>();
+        public ICollection<Mentor> Mentors { get; set; } = new List<Mentor>();
+        public ICollection<Mentor> MonitoredBy { get; set; } = new List<Mentor>();
+        public ICollection<GroupMembers> GroupMemberships { get; set; } = new List<GroupMembers>();
+        public ICollection<TaskParticipants> TaskParticipations { get; set; } = new List<TaskParticipants>();
+        public ICollection<Tasks> CreatedTasks { get; set; } = new List<Tasks>();
     }
 }

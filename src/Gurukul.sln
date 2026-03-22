@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gurukul.API", "Gurukul.API\Gurukul.API.csproj", "{928CE6E0-F846-4076-99B9-ACE94D3F2866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gurukul.Core", "Gurukul.Core\Gurukul.Core.csproj", "{7AE6DC92-C423-48B6-AE2A-00ABE0D87CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gurukul.Infrastructure", "Gurukul.Infrastructure\Gurukul.Infrastructure.csproj", "{FF14E324-304F-4807-B2A5-00C22D6F637C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{928CE6E0-F846-4076-99B9-ACE94D3F2866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{928CE6E0-F846-4076-99B9-ACE94D3F2866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{928CE6E0-F846-4076-99B9-ACE94D3F2866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{928CE6E0-F846-4076-99B9-ACE94D3F2866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE6DC92-C423-48B6-AE2A-00ABE0D87CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE6DC92-C423-48B6-AE2A-00ABE0D87CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE6DC92-C423-48B6-AE2A-00ABE0D87CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE6DC92-C423-48B6-AE2A-00ABE0D87CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF14E324-304F-4807-B2A5-00C22D6F637C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF14E324-304F-4807-B2A5-00C22D6F637C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF14E324-304F-4807-B2A5-00C22D6F637C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF14E324-304F-4807-B2A5-00C22D6F637C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

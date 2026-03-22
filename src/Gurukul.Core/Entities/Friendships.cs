@@ -1,19 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace src.Gurukul.Core.Entities
+namespace Gurukul.Core.Entities
 {
     public class Friendships
     {
-        public GUID Id { get; set; }
-        public GUID RequesterId { get; set; }
-        public GUID ReceiverId { get; set; }
-        public string Status { get; set; } 
+        public Guid Id { get; set; }
+        public Guid RequesterId { get; set; }
+        public Guid ReceiverId { get; set; }
+        public string Status { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public User Requester {get; set; }
-        public User Receiver {get; set; }
+        public User Requester { get; set; } = null!;
+        public User Receiver { get; set; } = null!;
     }
 }
