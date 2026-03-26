@@ -17,8 +17,10 @@ namespace Gurukul.Core.Entities
         public ICollection<Friendships> ReceivedFriendships { get; set; } = new List<Friendships>();
         public ICollection<Mentor> Mentors { get; set; } = new List<Mentor>();
         public ICollection<Mentor> MonitoredBy { get; set; } = new List<Mentor>();
+        public ICollection<Group> Groups { get; set; } = new List<Group>();
         public ICollection<GroupMembers> GroupMemberships { get; set; } = new List<GroupMembers>();
         public ICollection<TaskParticipants> TaskParticipations { get; set; } = new List<TaskParticipants>();
         public ICollection<Tasks> CreatedTasks { get; set; } = new List<Tasks>();
+        public ICollection<TaskProgress> TaskProgressRecords { get; set; } = new List<TaskProgress>();
     }
 }

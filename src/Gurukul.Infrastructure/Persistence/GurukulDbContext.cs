@@ -22,7 +22,6 @@ namespace Gurukul.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
             modelBuilder.Entity<Friendships>()
                 .HasOne(f => f.Requester)
                 .WithMany(u => u.SentFriendships)
@@ -34,7 +33,6 @@ namespace Gurukul.Infrastructure.Persistence
                 .WithMany(u => u.ReceivedFriendships)
                 .HasForeignKey(f => f.ReceiverId)
                 .OnDelete(DeleteBehavior.Restrict);
-
 
             modelBuilder.Entity<Mentor>()
                 .HasOne(r => r.Monitor)
@@ -48,18 +46,69 @@ namespace Gurukul.Infrastructure.Persistence
                 .HasForeignKey(r => r.StudentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<UserProfiles>()
+                .HasKey(p => p.UserId);
 
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Profile)
                 .WithOne(p => p.User)
-                .HasForeignKey<UserProfiles>(p => p.UserId);
+                .HasForeignKey<UserProfiles>(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-           
+            modelBuilder.Entity<Group>()
+                .HasOne(g => g.Creator)
+                .WithMany(u => u.Groups)
+                .HasForeignKey(g => g.CreatorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<GroupMembers>()
+                .HasOne(gm => gm.Group)
+                .WithMany(g => g.Members)
+                .HasForeignKey(gm => gm.GroupId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<GroupMembers>()
+                .HasOne(gm => gm.User)
+                .WithMany(u => u.GroupMemberships)
+                .HasForeignKey(gm => gm.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Tasks>()
+                .HasOne(t => t.Creator)
+                .WithMany(u => u.CreatedTasks)
+                .HasForeignKey(t => t.CreatorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Tasks>()
                 .HasOne(t => t.Group)
                 .WithMany(g => g.Tasks)
                 .HasForeignKey(t => t.GroupId)
-                .IsRequired(false);
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TaskParticipants>()
+                .HasOne(tp => tp.Task)
+                .WithMany(t => t.Participants)
+                .HasForeignKey(tp => tp.TaskId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TaskParticipants>()
+                .HasOne(tp => tp.User)
+                .WithMany(u => u.TaskParticipations)
+                .HasForeignKey(tp => tp.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TaskProgress>()
+                .HasOne(tp => tp.Task)
+                .WithMany(t => t.Progress)
+                .HasForeignKey(tp => tp.TaskId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TaskProgress>()
+                .HasOne(tp => tp.User)
+                .WithMany(u => u.TaskProgressRecords)
+                .HasForeignKey(tp => tp.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
